@@ -1,0 +1,12 @@
+<h1>All restaurants</h1>
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+      <li>
+        <%= link_to restaurant.name, restaurant_path(restaurant) %> : <%= restaurant.category %>, <%= restaurant.address %>
+        <%= link_to "Delete", restaurant_path(restaurant),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+      </li>
+    <% end %>
+  </ul>
+
